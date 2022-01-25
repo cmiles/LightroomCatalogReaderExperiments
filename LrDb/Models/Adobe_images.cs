@@ -35,12 +35,14 @@ namespace LrDb.Models
         public string positionInFolder { get; set; }
         public long propertiesCache { get; set; }
         public string pyramidIDCache { get; set; }
-        public byte[] rating { get; set; }
+        public double? rating { get; set; }
         public long rootFile { get; set; }
         public long sidecarStatus { get; set; }
         public long touchCount { get; set; }
         public double touchTime { get; set; }
 
         [NotMapped] public string OrientationStandard => ConversionHelpers.LrOrientationDescription(orientation);
+        [NotMapped] public DateTimeOffset TouchTimeStandard => ConversionHelpers.LrTimeStampToDateTime(touchTime).ToLocalTime();
+
     }
 }
