@@ -8,7 +8,7 @@ namespace LrDb.Models
     public partial class AgInternedExifCameraSN
     {
         public long id_local { get; set; }
-        public byte[] searchIndex { get; set; }
-        public byte[] value { get; set; }
+        public string searchIndex { get; set; }
+        public string value { get; set; }
     }
 }
