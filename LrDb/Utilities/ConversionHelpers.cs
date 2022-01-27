@@ -44,8 +44,14 @@ public static class ConversionHelpers
     public static DateTime LrTimeStampToDateTime(double lrTimeStamp)
     {
         // Credit to https://www.dpreview.com/forums/thread/4358462
-        var dateTime = new DateTime(2001, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
-        dateTime = dateTime.AddSeconds(lrTimeStamp).ToLocalTime();
-        return dateTime;
+        var baseDateTime = new DateTime(2001, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+        baseDateTime = baseDateTime.AddSeconds(lrTimeStamp).ToLocalTime();
+        return baseDateTime;
+    }
+
+    public static double DateTimeToLrTimeStamp(DateTime toTranslate)
+    {
+        var baseDateTime = new DateTime(2001, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+        return toTranslate.Subtract(baseDateTime).TotalSeconds;
     }
 }

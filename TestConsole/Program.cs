@@ -1,5 +1,6 @@
 ﻿using LrDb.Queries;
 using LrDb.Models;
+using LrDb.Utilities;
 using Microsoft.EntityFrameworkCore;
 
 var context = new LrDbContext();
@@ -18,3 +19,9 @@ Console.WriteLine(metadata.Dump());
 Console.WriteLine(camera.Dump());
 Console.WriteLine(cameraSn.Dump());
 Console.WriteLine(lens.Dump());
+
+var cutoffDate = ConversionHelpers.DateTimeToLrTimeStamp(DateTime.Now.AddDays(-28));
+var fileSet = await context.AgLibraryFile.Where(x => x.modTime > cutoffDate).ToListAsync();
+var consolidateData = await AgLibraryFileQueries.ConsolidateData(fileSet, context);
+
+Console.WriteLine(consolidateData.First().Dump());

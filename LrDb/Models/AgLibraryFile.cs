@@ -26,6 +26,6 @@ namespace LrDb.Models
         public string originalFilename { get; set; }
         public string sidecarExtensions { get; set; }
 
-        [NotMapped] public DateTimeOffset ModTimeStandard => ConversionHelpers.LrTimeStampToDateTime(modTime).ToLocalTime();
+        [NotMapped] public DateTime ModTimeStandard => ConversionHelpers.LrTimeStampToDateTime(modTime).ToLocalTime();
     }
 }
