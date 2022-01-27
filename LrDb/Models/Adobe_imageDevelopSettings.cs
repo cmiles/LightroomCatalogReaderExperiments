@@ -9,25 +9,25 @@ namespace LrDb.Models
     {
         public long id_local { get; set; }
         public long? allowFastRender { get; set; }
-        public byte[] beforeSettingsIDCache { get; set; }
-        public byte[] croppedHeight { get; set; }
-        public byte[] croppedWidth { get; set; }
-        public byte[] digest { get; set; }
-        public byte[] fileHeight { get; set; }
-        public byte[] fileWidth { get; set; }
+        public double? beforeSettingsIDCache { get; set; }
+        public string croppedHeight { get; set; }
+        public string croppedWidth { get; set; }
+        public string digest { get; set; }
+        public double? fileHeight { get; set; }
+        public double? fileWidth { get; set; }
         public long? grayscale { get; set; }
         public long hasBigData { get; set; }
         public long? hasDevelopAdjustments { get; set; }
-        public byte[] hasDevelopAdjustmentsEx { get; set; }
-        public byte[] historySettingsID { get; set; }
+        public long? hasDevelopAdjustmentsEx { get; set; }
+        public string historySettingsID { get; set; }
         public long? image { get; set; }
-        public byte[] processVersion { get; set; }
-        public byte[] profileCorrections { get; set; }
-        public byte[] removeChromaticAberration { get; set; }
-        public byte[] settingsID { get; set; }
+        public string processVersion { get; set; }
+        public double? profileCorrections { get; set; }
+        public double? removeChromaticAberration { get; set; }
+        public string settingsID { get; set; }
         public byte[] snapshotID { get; set; }
-        public byte[] text { get; set; }
-        public byte[] validatedForVersion { get; set; }
-        public byte[] whiteBalance { get; set; }
+        public string text { get; set; }
+        public double? validatedForVersion { get; set; }
+        public string whiteBalance { get; set; }
     }
 }
